@@ -48,6 +48,7 @@ protected:
 	afx_msg void OnSelchangeHighlightshape();
 	afx_msg void OnHighlightcolor();
 	afx_msg void OnHighlightcursor();
+	afx_msg void OnHighlightPressed();
 	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 	afx_msg void OnPaint();
 	//}}AFX_MSG

@@ -213,6 +213,7 @@ int g_customsel = 0;
 int g_recordcursor=1; 
 int g_cursortype=0; 
 int g_highlightcursor=0;
+int g_highlightpressed=0;
 int g_highlightsize=64;
 int g_highlightshape=0;
 COLORREF g_highlightcolor = RGB(255,255,125);
@@ -5776,6 +5777,7 @@ void CVscapView::SaveSettings()
 	fprintf(sFile, "g_customsel=%d \n",g_customsel); //Having this line means the custom cursor type cannot be re-arranged in a new order in the combo box...else previous saved settings referring to the custom type will not be correct	
 	fprintf(sFile, "g_cursortype=%d \n",g_cursortype); 
 	fprintf(sFile, "g_highlightcursor=%d \n",g_highlightcursor);
+	fprintf(sFile, "g_highlightpressed=%d \n",g_highlightpressed);
 	fprintf(sFile, "g_highlightsize=%d \n",g_highlightsize);
 	fprintf(sFile, "g_highlightshape=%d \n",g_highlightshape);
 
@@ -6085,6 +6087,7 @@ void CVscapView::LoadSettings()
 		fscanf(sFile, "g_customsel=%d \n",&g_customsel); //Having this line means the custom cursor type cannot be re-arranged in a new order in the combo box...else previous saved settings referring to the custom type will not be correct	
 		fscanf(sFile, "g_cursortype=%d \n",&g_cursortype); 		
 		fscanf(sFile, "g_highlightcursor=%d \n",&g_highlightcursor);
+		fscanf(sFile, "g_highlightpressed=%d \n",&g_highlightpressed);
 		fscanf(sFile, "g_highlightsize=%d \n",&g_highlightsize);
 		fscanf(sFile, "g_highlightshape=%d \n",&g_highlightshape);	
 		

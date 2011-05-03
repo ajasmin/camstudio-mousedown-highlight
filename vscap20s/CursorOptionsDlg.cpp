@@ -27,6 +27,7 @@ int customsel;
 int recordcursor; 
 int cursortype; 
 int highlightcursor;
+int highlightpressed;
 int highlightsize;
 int highlightshape;
 COLORREF highlightcolor;
@@ -40,6 +41,7 @@ extern int g_customsel;
 extern int g_recordcursor; 
 extern int g_cursortype; 
 extern int g_highlightcursor;
+extern int g_highlightpressed;
 extern int g_highlightsize;
 extern int g_highlightshape;
 extern COLORREF g_highlightcolor;
@@ -121,6 +123,7 @@ BEGIN_MESSAGE_MAP(CCursorOptionsDlg, CDialog)
 	ON_CBN_SELCHANGE(IDC_HIGHLIGHTSHAPE, OnSelchangeHighlightshape)
 	ON_BN_CLICKED(IDC_HIGHLIGHTCOLOR, OnHighlightcolor)
 	ON_BN_CLICKED(IDC_HIGHLIGHTCURSOR, OnHighlightcursor)
+	ON_BN_CLICKED(IDC_HIGHLIGHTPRESSED, OnHighlightPressed)
 	ON_WM_HSCROLL()
 	ON_WM_PAINT()
 	//}}AFX_MSG_MAP
@@ -246,6 +249,7 @@ BOOL CCursorOptionsDlg::OnInitDialog()
 	recordcursor = g_recordcursor; 
 	cursortype = g_cursortype; 
 	highlightcursor = g_highlightcursor;
+	highlightpressed = g_highlightpressed;
 	highlightsize = g_highlightsize;
 	highlightshape = g_highlightshape;
 	highlightcolor = g_highlightcolor;
@@ -277,6 +281,8 @@ BOOL CCursorOptionsDlg::OnInitDialog()
 
 	if (highlightcursor) {
 
+		((CButton *) GetDlgItem(IDC_HIGHLIGHTPRESSED))->EnableWindow(TRUE);
+
 		((CSliderCtrl *) GetDlgItem(IDC_HIGHLIGHTSIZE))->EnableWindow(TRUE);
 		((CComboBox *) GetDlgItem(IDC_HIGHLIGHTSHAPE))->EnableWindow(TRUE);
 		((CButton *) GetDlgItem(IDC_HIGHLIGHTCOLOR))->EnableWindow(TRUE);
@@ -287,6 +293,8 @@ BOOL CCursorOptionsDlg::OnInitDialog()
 
 	}
 	else {
+
+		((CButton *) GetDlgItem(IDC_HIGHLIGHTPRESSED))->EnableWindow(FALSE);
 
 		((CSliderCtrl *) GetDlgItem(IDC_HIGHLIGHTSIZE))->EnableWindow(FALSE);
 		((CComboBox *) GetDlgItem(IDC_HIGHLIGHTSHAPE))->EnableWindow(FALSE);
@@ -300,7 +308,7 @@ BOOL CCursorOptionsDlg::OnInitDialog()
 	
 	//Highlight UI	
 
-
+	((CButton *) GetDlgItem(IDC_HIGHLIGHTPRESSED))->SetCheck(highlightpressed);
 
 	((CButton *) GetDlgItem(IDC_CURSOR1))->EnableWindow(TRUE);
 	((CButton *) GetDlgItem(IDC_CURSOR2))->EnableWindow(TRUE);
@@ -498,6 +506,7 @@ void CCursorOptionsDlg::OnOK()
 	g_recordcursor = recordcursor; 
 	g_cursortype = cursortype; 
 	g_highlightcursor = highlightcursor;
+	g_highlightpressed = highlightpressed;
 	g_highlightsize = highlightsize;
 	g_highlightshape = highlightshape;
 	g_highlightcolor = highlightcolor;	
@@ -540,6 +549,8 @@ void CCursorOptionsDlg::OnHighlightcursor()
 	highlightcursor = ((CButton *) GetDlgItem(IDC_HIGHLIGHTCURSOR))->GetCheck();	
 	if (highlightcursor) {
 
+		((CButton *) GetDlgItem(IDC_HIGHLIGHTPRESSED))->EnableWindow(TRUE);
+
 		((CSliderCtrl *) GetDlgItem(IDC_HIGHLIGHTSIZE))->EnableWindow(TRUE);
 		((CComboBox *) GetDlgItem(IDC_HIGHLIGHTSHAPE))->EnableWindow(TRUE);
 		((CButton *) GetDlgItem(IDC_HIGHLIGHTCOLOR))->EnableWindow(TRUE);
@@ -550,6 +561,8 @@ void CCursorOptionsDlg::OnHighlightcursor()
 
 	}
 	else {
+
+		((CButton *) GetDlgItem(IDC_HIGHLIGHTPRESSED))->EnableWindow(FALSE);
 
 		((CSliderCtrl *) GetDlgItem(IDC_HIGHLIGHTSIZE))->EnableWindow(FALSE);
 		((CComboBox *) GetDlgItem(IDC_HIGHLIGHTSHAPE))->EnableWindow(FALSE);
@@ -564,6 +577,11 @@ void CCursorOptionsDlg::OnHighlightcursor()
 	RefreshHighlight();
 
 	
+}
+
+void CCursorOptionsDlg::OnHighlightPressed()
+{
+	highlightpressed = ((CButton *) GetDlgItem(IDC_HIGHLIGHTPRESSED))->GetCheck();	
 }
 
 void CCursorOptionsDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar) 

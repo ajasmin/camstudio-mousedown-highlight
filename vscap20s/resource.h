@@ -1,5 +1,5 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
+// Microsoft Visual C++ generated include file.
 // Used by vscap.rc
 //
 #define IDC_HIGHLIGHTCOLOR              3
@@ -185,6 +185,8 @@
 #define IDC_SYSTEMRECORD                1057
 #define IDC_SHIFT1                      1058
 #define IDC_RATETEXT                    1058
+#define IDC_HIGHLIGHTWHENPRESSED        1058
+#define IDC_HIGHLIGHTPRESSED            1058
 #define IDC_IMAGEFILETEXT               1059
 #define IDC_CTRL2                       1059
 #define IDC_BUTTON1                     1060
@@ -526,7 +528,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        198
 #define _APS_NEXT_COMMAND_VALUE         32908
-#define _APS_NEXT_CONTROL_VALUE         1058
+#define _APS_NEXT_CONTROL_VALUE         1059
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
