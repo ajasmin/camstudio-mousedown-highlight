@@ -3494,13 +3494,16 @@ LPBITMAPINFOHEADER captureScreenFrame(int left,int top,int width, int height,int
 	//Draw the HighLight	
 	if (g_highlightcursor==1) {	
 
-		POINT highlightPoint; 		
+		if (!g_highlightpressed || GetAsyncKeyState(VK_LBUTTON) < 0) {
 
-		highlightPoint.x = xPoint.x -64 ;
-		highlightPoint.y = xPoint.y -64 ;		
+			POINT highlightPoint;
+
+			highlightPoint.x = xPoint.x -64 ;
+			highlightPoint.y = xPoint.y -64 ;
 		
-		InsertHighLight( hMemDC, highlightPoint.x, highlightPoint.y);
+			InsertHighLight( hMemDC, highlightPoint.x, highlightPoint.y);
 
+		}
 	}
 	
 	//Draw the Cursor	
