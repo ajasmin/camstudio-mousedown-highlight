@@ -4135,7 +4135,44 @@ void CVscapView::OnOptionsCursoroptions()
 
 void InsertHighLight(HDC hdc,int xoffset, int yoffset)
 {
+	int highlightsize = g_highlightsize;
+	COLORREF highlightcolor = g_highlightcolor;
+	int highlightshape = g_highlightshape;
 
+	Gdiplus::Rect r;
+	if ((highlightshape == 0) || (highlightshape == 2)) { //circle and square
+		r = Gdiplus::Rect(
+			xoffset + highlightsize/2,
+			yoffset + highlightsize/2,
+			highlightsize,
+			highlightsize);
+	}
+	else if ((highlightshape == 1) || (highlightshape == 3)) { //ellipse and rectangle
+		r = Gdiplus::Rect(
+			xoffset + highlightsize/2,
+			yoffset + highlightsize/4*3,
+			highlightsize,
+			highlightsize/2);
+	}
+
+	Gdiplus::Graphics g(hdc);
+	Gdiplus::Color c(
+		127 /* alpha */,
+		GetRValue(highlightcolor),
+		GetGValue(highlightcolor),
+		GetBValue(highlightcolor));
+	Gdiplus::SolidBrush b(c);
+
+	if ((highlightshape == 0)  || (highlightshape == 1)) { //circle and ellipse
+		g.FillEllipse(&b, r);
+	}
+	else if ((highlightshape == 2) || (highlightshape == 3)) { //square and rectangle
+		g.FillRectangle(&b, r);
+	}
+
+
+
+#if 0
 	CSize fullsize;
 	fullsize.cx=128;
 	fullsize.cy=128;
@@ -4204,7 +4241,8 @@ void InsertHighLight(HDC hdc,int xoffset, int yoffset)
 	DeleteObject(hbm);
     DeleteDC(hdcBits);
 
-	
+
+#endif
 }
 
 void CVscapView::OnOptionsAutopan() 
@@ -4215,7 +4253,7 @@ void CVscapView::OnOptionsAutopan()
 	else
 		autopan=0;
 
-	
+
 }
 
 void CVscapView::OnOptionsAtuopanspeed() 
