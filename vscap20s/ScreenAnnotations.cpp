@@ -1600,7 +1600,7 @@ int AreWindowsEdited()
 
 		max = gList.shapeArray.GetSize();
 		itemWnd = NULL;		
-		for (i=max-1;i>=0; i--)
+		for (int i=max-1;i>=0; i--)
 		{
 			itemWnd = gList.shapeArray[i];		
 			if (itemWnd)

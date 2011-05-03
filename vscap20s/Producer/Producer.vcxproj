@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\Debug/Producer.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>vfw32.lib;winmm.lib;msacm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/Producer.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/Producer.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/Producer.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\Release/Producer.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>vfw32.lib;winmm.lib;msacm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../Release/Producer.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ProgramDatabaseFile>.\Release/Producer.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/Producer.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AdvProperty.cpp" />
+    <ClCompile Include="AudioFormat.cpp" />
+    <ClCompile Include="fister\Buffer.cpp" />
+    <ClCompile Include="Conversion.cpp" />
+    <ClCompile Include="swfsource\FAction.cpp" />
+    <ClCompile Include="swfsource\FBase.cpp" />
+    <ClCompile Include="swfsource\FBitmap.cpp" />
+    <ClCompile Include="swfsource\FButton.cpp" />
+    <ClCompile Include="swfsource\FControl.cpp" />
+    <ClCompile Include="swfsource\FDisplay.cpp" />
+    <ClCompile Include="swfsource\FFont.cpp" />
+    <ClCompile Include="swfsource\FImport.cpp" />
+    <ClCompile Include="swfsource\FMorph.cpp" />
+    <ClCompile Include="swfsource\FShape.cpp" />
+    <ClCompile Include="swfsource\FSound.cpp" />
+    <ClCompile Include="flashsdk\FSoundSDK.cpp" />
+    <ClCompile Include="swfsource\FSprite.cpp" />
+    <ClCompile Include="swfsource\FTarga.cpp" />
+    <ClCompile Include="FlashConversionDlg.cpp" />
+    <ClCompile Include="swfsource\FlashFontObj.cpp" />
+    <ClCompile Include="FlashInterface.cpp" />
+    <ClCompile Include="swfsource\FlashMP3Encoder.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MessageWnd.cpp" />
+    <ClCompile Include="Picture.cpp" />
+    <ClCompile Include="ProgressDlg.cpp" />
+    <ClCompile Include="SWFPropertySheet.cpp" />
+    <ClCompile Include="SlideToolBar.cpp" />
+    <ClCompile Include="fister\SoundBase.cpp" />
+    <ClCompile Include="fister\SoundFile.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="Conversion\WAVEIO.CPP" />
+    <ClCompile Include="swfsource\adler32.c" />
+    <ClCompile Include="swfsource\actioncompiler\assembler.cpp" />
+    <ClCompile Include="audio.cpp" />
+    <ClCompile Include="swfsource\actioncompiler\common.cpp" />
+    <ClCompile Include="swfsource\actioncompiler\compile.cpp" />
+    <ClCompile Include="swfsource\actioncompiler\compileaction.cpp" />
+    <ClCompile Include="swfsource\compress.c" />
+    <ClCompile Include="swfsource\crc32.c" />
+    <ClCompile Include="swfsource\deflate.c" />
+    <ClCompile Include="swfsource\gzio.c" />
+    <ClCompile Include="swfsource\infblock.c" />
+    <ClCompile Include="swfsource\infcodes.c" />
+    <ClCompile Include="swfsource\inffast.c" />
+    <ClCompile Include="swfsource\inflate.c" />
+    <ClCompile Include="swfsource\inftrees.c" />
+    <ClCompile Include="swfsource\infutil.c" />
+    <ClCompile Include="swfsource\actioncompiler\lex.swf4.cpp" />
+    <ClCompile Include="swfsource\actioncompiler\lex.swf5.cpp" />
+    <ClCompile Include="swfsource\actioncompiler\listaction.cpp" />
+    <ClCompile Include="swfsource\md5\md5.c" />
+    <ClCompile Include="playplus.cpp" />
+    <ClCompile Include="playplusDoc.cpp" />
+    <ClCompile Include="playplusView.cpp" />
+    <ClCompile Include="swfsource\actioncompiler\swf4compiler.tab.cpp" />
+    <ClCompile Include="swfsource\actioncompiler\swf5compiler.tab.cpp" />
+    <ClCompile Include="swfsource\trees.c" />
+    <ClCompile Include="swfsource\uncompr.c" />
+    <ClCompile Include="swfsource\zutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Producer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdvProperty.h" />
+    <ClInclude Include="AudioFormat.h" />
+    <ClInclude Include="Conversion.h" />
+    <ClInclude Include="FlashConversionDlg.h" />
+    <ClInclude Include="FlashInterface.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="ProgressDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SWFPropertySheet.h" />
+    <ClInclude Include="SlideToolBar.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="playplus.h" />
+    <ClInclude Include="playplusDoc.h" />
+    <ClInclude Include="playplusView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ABOUT.BMP" />
+    <None Include="Aboutdubber.bmp" />
+    <None Include="Aboutplayer.bmp" />
+    <None Include="Logo.bmp" />
+    <None Include="Logodubber.bmp" />
+    <None Include="Logoplayer.bmp" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\bitmap3.bmp" />
+    <None Include="res\playplus.ico" />
+    <None Include="res\playplus.rc2" />
+    <None Include="res\playplusDoc.ico" />
+    <None Include="res\toolbar1.bmp" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

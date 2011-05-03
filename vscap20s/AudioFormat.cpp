@@ -300,7 +300,7 @@ BOOL AudioFormat::OnInitDialog()
 	//Select the device combo box
 	int deviceIsSelected= 0; 
 	int selectedDevice = WAVE_MAPPER;
-	for (i=0; i<numdevice; i++) {
+	for (int i=0; i<numdevice; i++) {
 
 		if (AudioDeviceID == devicemap[i]) {
 			((CComboBox *) (GetDlgItem(IDC_INPUTDEVICE)))->SetCurSel(i);

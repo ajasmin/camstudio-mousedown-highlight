@@ -858,7 +858,7 @@ BOOL configWaveOutManual()
 
 
 	//Clean up
-	for (dwi = 0; dwi < m_dwMultipleItems; dwi++)
+	for (DWORD dwi = 0; dwi < m_dwMultipleItems; dwi++)
 	{							
 			CString fnum;
 			fnum.Format("%d",dwi);
