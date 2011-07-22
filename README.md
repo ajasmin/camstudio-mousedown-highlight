@@ -11,7 +11,7 @@ And here are the options I used:
 ![Settings](https://github.com/ajasmin/camstudio-mousedown-highlight/raw/master/settings.png)
 
 
-The *"Highlight only when button is pressed"* was added in this fork. The highlight rendering was also modified to make it look better on a dark background.
+The *"Highlight only when button is pressed"* option was added in this fork. The highlight rendering was also modified to make it look better on a dark background.
 
 
 You can [Download the executable here][2]. You will also need to install [Microsoft Visual C++ 2010 SP1 Redistributable Package (x86)][3].
